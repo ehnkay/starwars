@@ -1,6 +1,5 @@
 node_modules/
-public/scripts/app.js
-public/styles/style.css
+public/
 .DS_Store
 *.pdf
 *.zip
