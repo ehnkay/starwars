@@ -6,6 +6,18 @@ import {
 	Route, Link } from "react-router-dom";
 
 
+// Initialize Firebase
+var config = {
+	apiKey: "AIzaSyCekrwLaGtT81CPUmrlQ1XzaoZdNIWMeW0",
+	authDomain: "star-wars-3a630.firebaseapp.com",
+	databaseURL: "https://star-wars-3a630.firebaseio.com",
+	projectId: "star-wars-3a630",
+	storageBucket: "star-wars-3a630.appspot.com",
+	messagingSenderId: "92686925445"
+};
+firebase.initializeApp(config);
+
+
 class Search extends React.Component {
 	constructor() {
 		super();
@@ -34,7 +46,7 @@ class Search extends React.Component {
 			results: []
 		});
 		ajax({
-			url: `http://swapi.co/api/${this.state.category}`,
+			url: `https://swapi.co/api/${this.state.category}`,
 			method: "GET",
 			dataType: "json",
 			data: {
@@ -110,7 +122,7 @@ class Details extends React.Component {
 	}
 	componentDidMount() {
 		ajax({
-			url: `http://swapi.co/api/${this.props.match.params.category}/${this.props.match.params.number}`,
+			url: `https://swapi.co/api/${this.props.match.params.category}/${this.props.match.params.number}`,
 			method: "GET",
 			dataType: "json"
 		}).then((res) => {
